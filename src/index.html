@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="index.css" />
-    <title>Document</title>
-  </head>
 
-  <body>
-    <div class="container" id="container">
-      <header class="header">
-        <nav class="navigation">
-          <h1 class="offScreen">main navigation</h1>
-          <a href="#container">
-            <img src="" alt="logo" />
-          </a>
-          <!-- mobile nav -->
-          <!-- <a class="mobile-nav-icon">
-          <i class="fas fa-bars"></i>
-        </a> -->
-          <!-- mobile nav -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+  <link rel="stylesheet" href="index.css" />
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container" id="container">
+    <header class="header">
+      <nav class="navigation js--navigation">
+        <h1 class="offScreen">main navigation</h1>
+        <a href="#container">
+          <img src="" alt="logo" />
+        </a>
+        <div class="nav-full">
           <ul class="main-nav">
             <li>
               <a href="#section1">section1</a>
@@ -38,93 +39,100 @@
               <a href="#section5">section5</a>
             </li>
           </ul>
-        </nav>
-        <div class="hero-box clearfix">
-          <div class="hero-box__p">
-            <p>
-              Hello, world!<br />
-              I am
+        </div>
+        <!-- mobile nav -->
+        <a class="mobile-nav-icon js--nav-icon">
+            <i class="fas fa-bars"></i>
+          </a>
+          <!-- mobile nav -->
+      </nav>
+      <div class="hero-box clearfix">
+        <div class="hero-box__p">
+          <p>Hello, world!<br />
+            I am</p>
+          <h1>JOHN DOH</h1>
+          <p>Front-end Developer</p>
+        </div>
+        <div class="hero-box-cat">
+          <div class="hero-box__div--01"></div>
+          <div class="hero-box__div--02">
+            <a href="/">
+              <h3>01</h3>
+              <p>PROGRAMMING</p>
+            </a>
+          </div>
+          <div class="hero-box__div--03">
+            <a href="/">
+              <h3>02</h3>
+              <p>PLANNING</p>
+            </a>
+          </div>
+          <div class="hero-box__div--04">
+            <a href="/">
+              <h3>03</h3>
+              <p>MARKETING</p>
+            </a>
+          </div>
+          <div class="hero-box__div--05"></div>
+        </div>
+        <div class="hero-box-img"></div>
+      </div>
+    </header>
+    <section class="opening" id="opening">
+        <div class="row">
+          <h2 class="section-text-01">저희 결혼합니다</h2>
+        </div>
+        <div class="opening-box">
+          <div class="ment">
+            <p class="opening-ment">이 나라 저 나라 여권에 도장찍고 다니던 여행을 사랑하던 소녀가 지구 세 바퀴 반을 돌아 짝을 만났습니다. 오래도 만나지 않았지만, 이 사람이여야 할 것 같습니다.</p>
+            <p class="opening-quote">
+              세상이 다 겨울이어도
+              <br> 우리 사랑은 늘 봄 처럼 따듯하고,
+              <br> 간혹 여름처럼 뜨거울 겁니다.
+              <br> 그대, 사랑합니다.</p>
+            <p class="poet">
+              - 이수동, "사랑가" 중
             </p>
-            <h1>JOHN DOH</h1>
-            <p>Front-end Developer</p>
           </div>
-          <div class="hero-box-cat">
-            <div class="hero-box__div--01"></div>
-            <div class="hero-box__div--02">
-              <a href="/">
-                <h3>01</h3>
-                <p>PROGRAMMING</p>
-              </a>
-            </div>
-            <div class="hero-box__div--03">
-              <a href="/">
-                <h3>02</h3>
-                <p>PLANNING</p>
-              </a>
-            </div>
-            <div class="hero-box__div--04">
-              <a href="/">
-                <h3>03</h3>
-                <p>MARKETING</p>
-              </a>
-            </div>
-            <div class="hero-box__div--05"></div>
+          <div class="time-table">
+            <p class="time-date">2018년 9월 2일 15:00 ~ 17:00</p>
+            <p class="time-venue">라비다 하우스</p>
+            <p class="time-order"></p>
+            <p>1부 예식</p>
+            <p>2부 피로연</p>
           </div>
-          <div class="hero-box-img"></div>
         </div>
-      </header>
-
-      <section class="section1" id="section1">
-        <div class="row">
-          <h2 class="section-text-01">Title</h2>
-        </div>
-        <div class="section1-box"></div>
       </section>
 
-      <template id="comments">
-        <blockquote class="comment">
-          <div class="comment-text"></div>
-          <p class="author"></p>
-          <span class="quote">
-            <i class="fas fa-quote-left"></i>
+    <footer>
+      <div class="row">
+        <address class="footer-address">
+          <span class="footer-name">
+            <a href="http://laperitif.co" target="_blank">l'aperitif.co</a>
           </span>
-        </blockquote>
-      </template>
+          <span class="footer-email">
+            <a href="mailto:contact@laperitif.co?subject=[invitation] hello, ">contact@laperitif.co</a>
+          </span>
+        </address>
+      </div>
+      <div class="row">
+        <small class="copyright">
+          copyright since &copy; 2018 by
+          <a href="http://laperitif.co" target="_blank">laperitif.co</a>
+          CORPOTATION ALL RIGHTS RESERVED
+        </small>
+      </div>
+    </footer>
+  </div>
 
-      <section class="section2" id="section2">
-        <div class="row">
-          <h2 class="section-text-01">Title</h2>
-        </div>
-        <div class="row">
-          <!-- insert -->
-          <div class="comments-box">loading..</div>
-          <!-- insert -->
-        </div>
-      </section>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+  <script src="index.js"></script>
+</body>
 
-      <footer>
-        <div class="row">
-          <address class="footer-address">
-            <span class="footer-name">
-              <a href="http://laperitif.co" target="_blank">l'aperitif.co</a>
-            </span>
-            <span class="footer-email">
-              <a href="mailto:contact@laperitif.co?subject=[invitation] hello, "
-                >contact@laperitif.co</a
-              >
-            </span>
-          </address>
-        </div>
-        <div class="row">
-          <small class="copyright">
-            copyright since &copy; 2018 by
-            <a href="http://laperitif.co" target="_blank">laperitif.co</a>
-            CORPOTATION ALL RIGHTS RESERVED
-          </small>
-        </div>
-      </footer>
-    </div>
-
-    <script src="index.js"></script>
-  </body>
 </html>
