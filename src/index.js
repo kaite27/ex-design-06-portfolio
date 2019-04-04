@@ -32,3 +32,11 @@ $(document).ready(function () {
     }
   });
 });
+
+// Scroll animations
+$('.experiences').waypoint(function () {
+  $('.tab-content ul').addClass('animated fadeInDown');
+}, {
+  offset: '80%'
+});
+
