@@ -601,19 +601,122 @@ nav {
 
 
 /* ---------------------- */
-/* ABOUT */
+/* EXPERIENCES */
 /* ---------------------- */
 
+.experiences {
+  background-color: #fff;
+}
 
+.nav-link.active {
+  background-color: #0abbb5 !important;
+  border: 0.5px solid #0abbb5;
+}
 
+.nav-link {
+  transition: .7s ease-in-out;
+  color: #333;
+  margin: 0 6px;
+  min-width: 100px;
+  border: 0.5px solid rgb(240, 240, 240);
+  text-align: center;
+}
 
+.nav-link:hover {
+  background-color: #0abbb5;
+  border: 0.5px solid #0abbb5;
+}
+
+.nav.nav-pills.mb-3 {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.tab-content {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  
+}
+
+.tab-content ul {
+  position: relative;
+  padding: 20px 0;
+}
+
+.tab-content ul::before {
+  content: '';
+  height: 100%;
+  width: 5px;
+  background: #9aecea;
+  position: absolute;
+  left: 44%;
+  transform: translateX(-50%);
+  top: -2px;
+}
+
+.tab-content li {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.tab-content li:last-child {
+  margin-bottom: 18px;
+}
+
+.tab-content li .float-dot {
+  position: absolute;
+  left: 44%;
+  top: 10px;
+  transform: translateX(-50%);
+}
+
+.tab-content li .float-dot::after {
+  content: '';
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.tab-content .text-primary {
+  color: #0abbb5 !important;
+}
+
+.spinner-grow {
+  width: 1.5rem;
+  height: 1.5rem;
+  animation: spinner-grow 1s linear infinite;
+}
+
+.tab-content .experience {
+  display: grid;
+  grid-template-areas: "date content";
+  grid-template-rows: auto;
+  grid-template-columns: 2.3fr 3fr;
+  gap: 120px;
+}
+
+.experience-date {
+  grid-area: date;
+  text-align: right;
+  margin-top: 10px;
+}
+
+.experience-content {
+  grid-area: content;
+  padding-right: 15%;
+}
 
 /* ---------------------- */
 /* FOOTER */
 /* ---------------------- */
 
 footer {
-  background-color: #0abbb5;
   color: #fff;
   padding: 30px 4%;
   z-index: 999 !important;
