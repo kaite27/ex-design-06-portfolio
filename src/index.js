@@ -40,3 +40,9 @@ $('.experiences').waypoint(function () {
   offset: '80%'
 });
 
+const btnLearnMore = document.querySelector(".btn-ghost1");
+
+btnLearnMore.addEventListener("click", e => {
+  console.log('its clicked');
+  $('#exampleModal').modal("toggle");
+});
