@@ -177,6 +177,21 @@ body .btn {
   transition: all 150ms linear;
 }
 
+body .btn-ghost { 
+  display: inline-block;
+  text-align: center;
+  font-weight: 400;
+  color: #fff !important;
+  padding: 12px 0;
+  margin: 10px 0 12px 0;
+  min-width: 140px;
+  border-radius: 4px;
+  border: 2px solid #fff;
+  background-color: transparent;
+  transition: all 0.3s linear;
+  cursor: default;
+}
+
 body .btn-disable {
   background-color: #9aecea !important;
   color: rgb(164, 199, 199) !important;
@@ -190,6 +205,10 @@ body .btn:active {
 
 body .btn:hover {
   opacity: 0.85;
+}
+
+body .btn-ghost:hover {
+  background-color: #0abbb5a6;
 }
 
 /* --------------------- */
@@ -701,15 +720,61 @@ nav {
   background-image: url("image/app1-min.jpg");
   background-size: cover;
   background-position-x: 50%;
+  position: relative;
+  overflow: hidden;
+  transition: 1s ease-in-out;
 }
 
-.proj-img:last-child {
-  background-image: none;
-  background-size: cover;
-  background-position-x: 50%;
+.proj-img::before {
+  content: '';
+  width: 100%;
+  height: 70%;
+  position: absolute;
+  bottom: -100px;
+  left: 0;
+  background: linear-gradient(0deg, #0abbb5 5%, transparent);
+  transition: 1s ease-out;
+}
+
+.proj-img-last {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.proj-img .proj-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: #fff;
+  z-index: 2;
+  padding: 10px;
+  transform: translateY(90%);
+  transition: 1s ease-in-out;
+}
+
+.proj-img .proj-caption span {
+  display: block;
+  text-align: right;
+  font-size: 1.5rem;
+}
+
+.proj-img .proj-caption span i {
+  padding-left: 10px;
+}
+
+.proj-img:hover::before {
+  bottom: 0;
+}
+
+.proj-img:hover .proj-caption {
+  transform: translateY(0%);
+}
+
+.proj-img .proj-caption div {
+  width: 100%;
+  text-align: center;
 }
 
 /* ---------------------- */
