@@ -1,14 +1,35 @@
 import axios from "axios";
 
-const namedAPI = axios.create({
+const portfolioAPI = axios.create({
   baseURL: process.env.API_URL
 });
 
 const templates = {
   // template tag 를 사용한 객체들 -> 서버 db 에서 정보를 가져올 객체
-  // commentList: document.querySelector("#comments").content
+  expList: document.querySelector("#experience").content
 };
 
+{
+  async function experience() {
+    const res = await portfolioAPI.get(
+      `/experiences?category=work&_sort=id&_order=desc`
+    );
+
+    document.querySelector(".exp__ul").textContent = "";
+
+    res.data.forEach(exp => {
+      const fragment = document.importNode(templates.expList, true);
+      const dateEl = fragment.querySelector(".experience-date");
+      const titleEl = fragment.querySelector(".exp-title");
+      const bodyEl = fragment.querySelector(".exp-body");
+      dateEl.textContent = exp.body;
+      titleEl.textContent = exp.name;
+      bodyEl.textContent = exp.name;
+      document.querySelector(".exp__ul").appendChild(fragment);
+    });
+  }
+  experience();
+}
 
 /* Mobile navigation */
 $(document).ready(function () {
