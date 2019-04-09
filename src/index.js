@@ -1,4 +1,8 @@
 import axios from "axios";
+import "@babel/polyfill";
+import {
+  tmpdir
+} from "os";
 
 const portfolioAPI = axios.create({
   baseURL: process.env.API_URL
@@ -10,9 +14,10 @@ const templates = {
 };
 
 {
-  async function experience() {
+  async function experience(cat) {
     const res = await portfolioAPI.get(
-      `/experiences?category=work&_sort=id&_order=desc`
+      `/experiences?category=${cat}&_sort=id&_order=desc`
+      // `/experiences?category=work&_sort=id&_order=desc`
     );
 
     document.querySelector(".exp__ul").textContent = "";
@@ -22,13 +27,21 @@ const templates = {
       const dateEl = fragment.querySelector(".experience-date");
       const titleEl = fragment.querySelector(".exp-title");
       const bodyEl = fragment.querySelector(".exp-body");
-      dateEl.textContent = exp.body;
-      titleEl.textContent = exp.name;
-      bodyEl.textContent = exp.name;
+      dateEl.textContent = exp.date;
+      titleEl.textContent = exp.title;
+
+      const divied = exp.body.split('\n');
+      const firstP = document.createElement('div');
+      const secondP = document.createElement('div');
+      firstP.textContent = divied[0]
+      secondP.textContent = divied[1]
+      bodyEl.appendChild(firstP);
+      bodyEl.appendChild(secondP);
+
       document.querySelector(".exp__ul").appendChild(fragment);
     });
   }
-  experience();
+  experience("work");
 }
 
 /* Mobile navigation */
@@ -55,28 +68,36 @@ $(document).ready(function () {
 });
 
 // Scroll animations
+const expAnime = function() {
+  const ul = $('.exp__ul');
+  ul.addClass('animated fadeInDown');
+  setTimeout(() => {
+    $('.exp__ul').removeClass('animated fadeInDown')
+  }, 1200);
+}
+
 $('.experiences').waypoint(function () {
-  $('.tab-content ul').addClass('animated fadeInDown');
+  expAnime();
 }, {
-  offset: '80%'
+  offset: '60%'
+});
+
+$('.projects').waypoint(function () {
+  $('.proj-img:nth-child(2n)').addClass('animated slideInDown');
+  // setTimeout(function () {
+  $('.proj-img:nth-child(2n-1)').addClass('animated slideInUp');
+  // }, 1000);
+}, {
+  offset: '10%'
 });
 
 $('.contact').waypoint(function () {
   $('.contact-form__div').addClass('animated fadeInLeft');
-  setTimeout(function(){
+  setTimeout(function () {
     $('.form__input:first-child').addClass('animated flash');
   }, 1300);
 }, {
-  offset: '80%'
-});
-
-$('.projects').waypoint(function () {
-    $('.proj-img:nth-child(2n)').addClass('animated slideInDown');
-  // setTimeout(function () {
-    $('.proj-img:nth-child(2n-1)').addClass('animated slideInUp');
-  // }, 1000);
-}, {
-  offset: '50%'
+  offset: '60%'
 });
 
 // Modal Toggle on Project Section
@@ -91,53 +112,66 @@ const openTab1 = document.querySelector(".exp-item__list:nth-child(1)");
 const openTab2 = document.querySelector(".exp-item__list:nth-child(2)");
 const openTab3 = document.querySelector(".exp-item__list:nth-child(3)");
 
-const openTab4 = document.querySelector(".proj-item__list:nth-child(1)");
-const openTab5 = document.querySelector(".proj-item__list:nth-child(2)");
-const openTab6 = document.querySelector(".proj-item__list:nth-child(3)");
+// const openTab4 = document.querySelector(".proj-item__list:nth-child(1)");
+// const openTab5 = document.querySelector(".proj-item__list:nth-child(2)");
+// const openTab6 = document.querySelector(".proj-item__list:nth-child(3)");
 
 
-openTab1.addEventListener("click", e => {
-  openTab(event, "work", "exp-item__div", "exp-item__list");
+openTab1.addEventListener("click", async e => {
+  e.preventDefault();
+  openTab(event, "work", loadExperience);
+  expAnime();
 });
 
-openTab2.addEventListener("click", e => {
-  openTab(event, "educational", "exp-item__div", "exp-item__list");
+openTab2.addEventListener("click", async e => {
+  e.preventDefault();
+  openTab(event, "educational", loadExperience);
+  expAnime();
 });
 
-openTab3.addEventListener("click", e => {
-  openTab(event, "participation", "exp-item__div", "exp-item__list");
+openTab3.addEventListener("click", async e => {
+  e.preventDefault();
+  openTab(event, "participation", loadExperience);
+  expAnime();
 });
 
-openTab4.addEventListener("click", e => {
-  openTab(event, "develop", "proj-item__div", "proj-item__list");
-});
+const loadExperience = async function experience(catName) {
+  const res = await portfolioAPI.get(
+    `/experiences?category=${catName}&_sort=id&_order=desc`
+  );
 
-openTab5.addEventListener("click", e => {
-  openTab(event, "planning", "proj-item__div", "proj-item__list");
-});
+  document.querySelector(".exp__ul").textContent = "";
 
-openTab6.addEventListener("click", e => {
-  openTab(event, "marketing", "proj-item__div", "proj-item__list");
-});
+  res.data.forEach(exp => {
+    const fragment = document.importNode(templates.expList, true);
+    const dateEl = fragment.querySelector(".experience-date");
+    const titleEl = fragment.querySelector(".exp-title");
+    const bodyEl = fragment.querySelector(".exp-body");
+    dateEl.textContent = exp.date;
+    titleEl.textContent = exp.title;
 
+    const divied = exp.body.split('\n');
+    const firstP = document.createElement('div');
+    const secondP = document.createElement('div');
+    firstP.textContent = divied[0]
+    secondP.textContent = divied[1]
+    bodyEl.appendChild(firstP);
+    bodyEl.appendChild(secondP);
 
-function openTab(event, eventName, tabDiv, tabList) {
-  const tabContent = document.querySelectorAll(`.${tabDiv}`);
-  for (let i = 0; i < tabContent.length; i++) {
-    tabContent[i].style.display = "none";
-  }
+    document.querySelector(".exp__ul").appendChild(fragment);
+  });
+}
 
-  const tabLinks = document.querySelectorAll(`.${tabList}`);
+function openTab(event, catName, funcion) {
+  const tabLinks = document.querySelectorAll(`.exp-item__list`);
   for (let i = 0; i < tabLinks.length; i++) {
     tabLinks[i].className = tabLinks[i].className.replace(" active", "");
   }
 
-  document.querySelector(`#${eventName}`).style.display = "block";
-  event.currentTarget.className += ' active'
-  document.querySelector(`#${eventName}`).className = `tab-pane ${tabDiv} fade show active`;
+  event.currentTarget.className += ' active';
+
+  funcion(catName);
 }
-
-
 
 
 // Scroll-moving to links
