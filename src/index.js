@@ -49,6 +49,15 @@ $('.contact').waypoint(function () {
   offset: '80%'
 });
 
+$('.projects').waypoint(function () {
+    $('.proj-img:nth-child(2n)').addClass('animated slideInDown');
+  // setTimeout(function () {
+    $('.proj-img:nth-child(2n-1)').addClass('animated slideInUp');
+  // }, 1000);
+}, {
+  offset: '50%'
+});
+
 // Modal Toggle on Project Section
 const btnLearnMore = document.querySelector(".btn-ghost1");
 
@@ -57,44 +66,64 @@ btnLearnMore.addEventListener("click", e => {
 });
 
 // Tab control on Experiences Section 
-const openTab1 = document.querySelector(".nav-item:nth-child(1)");
-const openTab2 = document.querySelector(".nav-item:nth-child(2)");
-const openTab3 = document.querySelector(".nav-item:nth-child(3)");
+const openTab1 = document.querySelector(".exp-item__list:nth-child(1)");
+const openTab2 = document.querySelector(".exp-item__list:nth-child(2)");
+const openTab3 = document.querySelector(".exp-item__list:nth-child(3)");
+
+const openTab4 = document.querySelector(".proj-item__list:nth-child(1)");
+const openTab5 = document.querySelector(".proj-item__list:nth-child(2)");
+const openTab6 = document.querySelector(".proj-item__list:nth-child(3)");
+
 
 openTab1.addEventListener("click", e => {
-  openEvent(event, "work");
+  openTab(event, "work", "exp-item__div", "exp-item__list");
 });
 
 openTab2.addEventListener("click", e => {
-  openEvent(event, "educational");
+  openTab(event, "educational", "exp-item__div", "exp-item__list");
 });
 
 openTab3.addEventListener("click", e => {
-  openEvent(event, "participation");
+  openTab(event, "participation", "exp-item__div", "exp-item__list");
 });
 
-function openEvent(event, eventName) {
-  const tabContent = document.querySelectorAll(".tab-pane");
+openTab4.addEventListener("click", e => {
+  openTab(event, "develop", "proj-item__div", "proj-item__list");
+});
+
+openTab5.addEventListener("click", e => {
+  openTab(event, "planning", "proj-item__div", "proj-item__list");
+});
+
+openTab6.addEventListener("click", e => {
+  openTab(event, "marketing", "proj-item__div", "proj-item__list");
+});
+
+
+function openTab(event, eventName, tabDiv, tabList) {
+  const tabContent = document.querySelectorAll(`.${tabDiv}`);
   for (let i = 0; i < tabContent.length; i++) {
     tabContent[i].style.display = "none";
   }
 
-  const tabLinks = document.querySelectorAll(".nav-item");
+  const tabLinks = document.querySelectorAll(`.${tabList}`);
   for (let i = 0; i < tabLinks.length; i++) {
     tabLinks[i].className = tabLinks[i].className.replace(" active", "");
   }
 
   document.querySelector(`#${eventName}`).style.display = "block";
   event.currentTarget.className += ' active'
-  document.querySelector(`#${eventName}`).className = "tab-pane fade show active";
+  document.querySelector(`#${eventName}`).className = `tab-pane ${tabDiv} fade show active`;
 }
+
+
 
 
 // Scroll-moving to links
 $(document).ready(function () {
   $('a[href*="#"]')
     .not('[href="#"]')
-    .not('[href="#0"]')
+    .not('[href="#carouselExampleControls"]')
     .click(function (event) {
       if (
         location.pathname.replace(/^\//, "") ==

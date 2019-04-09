@@ -120,20 +120,14 @@
       </div>
       <div class="row">
         <div class="exp-category">
-          <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-            <li class="nav-item active">Work
-              <!-- <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-work" role="tab">Work</a> -->
-            </li>
-            <li class="nav-item">Educational
-              <!-- <a class="nav-link" id="pills-study-tab" data-toggle="pill" href="#pills-study" role="tab">Educational</a> -->
-            </li>
-            <li class="nav-item">Participation
-              <!-- <a class="nav-link" id="pills-participation-tab" data-toggle="pill" href="#pills-participation" role="tab">Participation</a> -->
-            </li>
+          <ul class="nav nav-pills mb-3" id="pills-tab">
+            <li class="nav-item exp-item__list active">Work</li>
+            <li class="nav-item exp-item__list">Educational</li>
+            <li class="nav-item exp-item__list">Participation</li>
           </ul>
         </div>
         <div class="tab-content" id="pills-tabContent">
-          <div class="tab-pane fade show active" id="work" role="tabpanel">
+          <div class="tab-pane exp-item__div fade show active" id="work" role="tabpanel">
             <ul>
               <li>
                 <span class="float-dot">
@@ -177,7 +171,7 @@
               </li>
             </ul>
           </div>
-          <div class="tab-pane fade" id="educational" role="tabpanel">
+          <div class="tab-pane exp-item__div fade" id="educational" role="tabpanel">
             <ul>
               <li>
                 <span class="float-dot">
@@ -221,7 +215,7 @@
               </li>
             </ul>
           </div>
-          <div class="tab-pane fade" id="participation" role="tabpanel">
+          <div class="tab-pane exp-item__div fade" id="participation" role="tabpanel">
             <ul>
               <li>
                 <span class="float-dot">
@@ -275,23 +269,14 @@
       </div>
       <div class="row">
         <div class="projects-cat">
-          <ul class="nav nav-pills" id="myTab" role="tablist">
-            <li class="nav-item">
-              <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#home" role="tab"
-                aria-controls="home" aria-selected="true">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#profile" role="tab"
-                aria-controls="profile" aria-selected="false">Profile</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" id="pills-messages-tab" data-toggle="pill" href="#messages" role="tab"
-                aria-controls="messages" aria-selected="false">Messages</a>
-            </li>
+          <ul class="nav nav-pills">
+            <li class="nav-item proj-item__list active">Develop</li>
+            <li class="nav-item proj-item__list">Planning</li>
+            <li class="nav-item proj-item__list">Marketing</li>
           </ul>
         </div>
         <div class="tab-content projects-content">
-          <div class="tab-pane active fade show" id="home" role="tabpanel" aria-labelledby="home-pill">
+          <div class="tab-pane proj-item__div active fade show" id="develop">
             <div class="proj-dev">
               <div class="proj-img">
                 <div class="proj-caption">
@@ -304,7 +289,7 @@
                 <div class="proj-caption">
                   <div><a href="#" class="btn-ghost">Learn More</a></div>
                   <h5 class="proj-title">Tile02-subtitle02</h5>
-                  <span><i class="fab fa-js-square"></i></span>
+                  <span><i class="fab fa-js-square"><i class="fab"></i></span>
                 </div>
               </div>
               <div class="proj-img">
@@ -363,8 +348,8 @@
             </div>
           </div>
 
-          <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-pill">123</div>
-          <div class="tab-pane fade" id="messages" role="tabpanel" aria-labelledby="messages-pill">556</div>
+          <div class="tab-pane proj-item__div fade" id="planning">123</div>
+          <div class="tab-pane proj-item__div fade" id="marketing">556</div>
 
           <!-- modal -->
           <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
@@ -399,7 +384,15 @@
                   <div class="modal-subtitle">Vendor Company AA</div>
                   <div class="modal-text">Exercitation nostrud aute et fugiat deserunt aute qui. Sint aliquip
                     reprehenderit irure adipisicing
-                    enim deserunt quis ipsum consectetur. Cupidatat tempor cupidatat ea nostrud fugiat mollit.</div>
+                    enim deserunt quis ipsum consectetur. Cupidatat tempor cupidatat ea nostrud fugiat mollit.
+                    enim deserunt quis ipsum consectetur. Cupidatat tempor cupidatat ea nostrud fugiat mollit.
+                    enim deserunt quis ipsum consectetur. Cupidatat tempor cupidatat ea nostrud fugiat mollit.
+                    enim deserunt quis ipsum consectetur. Cupidatat tempor cupidatat ea nostrud fugiat mollit.
+                  </div>
+                  <div class="modal-btn">
+                    <a href="#" class="btn">GIT Repo</a>
+                    <a href="#" class="btn-ghost">View Site</a>
+                  </div>
                 </div>
               </div>
             </div>

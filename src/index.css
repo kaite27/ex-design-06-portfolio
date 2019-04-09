@@ -177,7 +177,7 @@ body .btn {
   transition: all 150ms linear;
 }
 
-body .btn-ghost { 
+body .btn-ghost {
   display: inline-block;
   text-align: center;
   font-weight: 400;
@@ -188,7 +188,7 @@ body .btn-ghost {
   border-radius: 4px;
   border: 2px solid #fff;
   background-color: transparent;
-  transition: all 0.3s linear;
+  transition: all 0.3s;
   cursor: default;
 }
 
@@ -874,8 +874,34 @@ nav {
 }
 
 .modal-content .modal-footer .modal-text {
-  margin: 15px 0 10px 0;
+  margin: 15px 0 18px 0;
   line-height: 1.4;
+  height: 110px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  display: -webkit-box;
+  white-space: normal;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
+
+.modal-btn {
+  /* background-color: #333; */
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.modal-btn .btn-ghost {
+  margin: 0;
+  border: 2px solid #0abbb5;
+  color: #0abbb5 !important;
+}
+
+.modal-btn .btn-ghost:hover {
+  color: #fff !important;
+  background-color: #0abbb5;
 }
 
 /* ---------------------- */
@@ -912,6 +938,7 @@ nav {
 
 .contact-form__div .form__input textarea {
   height: 120px;
+  resize: none;
 }
 
 .contact-form__div .form__input label {
@@ -929,10 +956,10 @@ nav {
   color: rgb(209, 25, 25);
 }
 
-.form__input input:focus ~ label,
-.form__input textarea:focus ~ label,
-.form__input input:valid ~ label,
-.form__input textarea:valid ~ label {
+.form__input input:focus~label,
+.form__input textarea:focus~label,
+.form__input input:valid~label,
+.form__input textarea:valid~label {
   content: "23525?";
   top: -18px;
   color: #0abbb5;
