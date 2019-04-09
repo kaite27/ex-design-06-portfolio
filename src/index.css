@@ -242,7 +242,8 @@ nav {
 
 .main-nav {
   position: relative;
-  background-color: rgba(150, 150, 150, 0.6);
+  /* background-color: rgba(150, 150, 150, 0.6); */
+  background-color: rgba(51, 51, 51, 0.8);
   width: 0vw;
   height: 100vh;
   transition: 2s;
@@ -270,8 +271,7 @@ nav {
 
 .main-nav li a {
   font-weight: 600;
-  color: #9aecea;
-  color: rgb(44, 40, 40);
+  color: #0abbb5;
   position: relative;
 }
 
@@ -585,23 +585,27 @@ nav {
   background-color: #fff;
 }
 
-.nav-link.active {
+.nav-item.active {
   background-color: #0abbb5 !important;
   border: 0.5px solid #0abbb5;
+  color: #fff;
 }
 
-.nav-link {
-  transition: .7s ease-in-out;
+.nav-item {
+  text-align: center;
   color: #333;
   margin: 0 6px;
+  padding: 10px 15px;
   min-width: 100px;
-  border: 0.5px solid rgb(240, 240, 240);
-  text-align: center;
+  border: .5px solid rgb(240, 240, 240);
+  border-radius: 5px;
+  transition: .7s ease-in-out;
 }
 
-.nav-link:hover {
+.nav-item:hover {
   background-color: #0abbb5;
   border: 0.5px solid #0abbb5;
+  color: #fff;
 }
 
 .nav.nav-pills.mb-3 {
@@ -873,6 +877,68 @@ nav {
   margin: 15px 0 10px 0;
   line-height: 1.4;
 }
+
+/* ---------------------- */
+/* CONTACT */
+/* ---------------------- */
+
+.contact {
+  text-align: center;
+  background-color: #333;
+  color: rgb(223, 223, 223);
+}
+
+.contact-form__div {
+  width: 500px;
+  margin: 50px auto 0 auto;
+}
+
+.contact-form__div .form__input {
+  position: relative;
+}
+
+
+.contact-form__div .form__input input,
+.contact-form__div .form__input textarea {
+  width: 100%;
+  padding: 10px 0;
+  color: #fff;
+  margin-bottom: 30px;
+  border: 0;
+  border-bottom: 2px solid #0abbb5;
+  outline: none;
+  background: transparent;
+}
+
+.contact-form__div .form__input textarea {
+  height: 120px;
+}
+
+.contact-form__div .form__input label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  color: #fff;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.contact-form__div .form__input label:after {
+  content: " *";
+  color: rgb(209, 25, 25);
+}
+
+.form__input input:focus ~ label,
+.form__input textarea:focus ~ label,
+.form__input input:valid ~ label,
+.form__input textarea:valid ~ label {
+  content: "23525?";
+  top: -18px;
+  color: #0abbb5;
+  font-size: 14px;
+}
+
 
 
 /* ---------------------- */

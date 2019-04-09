@@ -25,19 +25,19 @@
         <div class="nav-box">
           <ul class="main-nav">
             <li>
-              <a href="#section1" data-text="SECTION1">SECTION1</a>
+              <a href="#container" data-text="HOME">HOME</a>
             </li>
             <li>
-              <a href="#section2" data-text="SECTION2">SECTION2</a>
+              <a href="#about" data-text="ABOUT">ABOUT</a>
             </li>
             <li>
-              <a href="#section3" data-text="SECTION3">SECTION3</a>
+              <a href="#experiences" data-text="EXPERIENCES">EXPERIENCES</a>
             </li>
             <li>
-              <a href="#section4" data-text="SECTION4">SECTION4</a>
+              <a href="#projects" data-text="PROJECTS">PROJECTS</a>
             </li>
             <li>
-              <a href="#section5" data-text="SECTION5">SECTION5</a>
+              <a href="#contact" data-text="CONTACT">CONTACT</a>
             </li>
           </ul>
           <!-- mobile nav -->
@@ -57,19 +57,19 @@
         <div class="hero-box-cat">
           <div class="hero-box__div--01"></div>
           <div class="hero-box__div--02">
-            <a href="/">
+            <a href="#projects">
               <h3>01</h3>
               <p>PROGRAMMING</p>
             </a>
           </div>
           <div class="hero-box__div--03">
-            <a href="/">
+            <a href="#projects">
               <h3>02</h3>
               <p>PLANNING</p>
             </a>
           </div>
           <div class="hero-box__div--04">
-            <a href="/">
+            <a href="#projects">
               <h3>03</h3>
               <p>MARKETING</p>
             </a>
@@ -121,22 +121,19 @@
       <div class="row">
         <div class="exp-category">
           <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-            <li class="nav-item">
-              <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-work" role="tab"
-                aria-controls="pills-work" aria-selected="true">Work</a>
+            <li class="nav-item active">Work
+              <!-- <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-work" role="tab">Work</a> -->
             </li>
-            <li class="nav-item">
-              <a class="nav-link" id="pills-study-tab" data-toggle="pill" href="#pills-study" role="tab"
-                aria-controls="pills-study" aria-selected="false">Educational</a>
+            <li class="nav-item">Educational
+              <!-- <a class="nav-link" id="pills-study-tab" data-toggle="pill" href="#pills-study" role="tab">Educational</a> -->
             </li>
-            <li class="nav-item">
-              <a class="nav-link" id="pills-participation-tab" data-toggle="pill" href="#pills-participation" role="tab"
-                aria-controls="pills-participation" aria-selected="false">Participation</a>
+            <li class="nav-item">Participation
+              <!-- <a class="nav-link" id="pills-participation-tab" data-toggle="pill" href="#pills-participation" role="tab">Participation</a> -->
             </li>
           </ul>
         </div>
         <div class="tab-content" id="pills-tabContent">
-          <div class="tab-pane fade show active" id="pills-work" role="tabpanel">
+          <div class="tab-pane fade show active" id="work" role="tabpanel">
             <ul>
               <li>
                 <span class="float-dot">
@@ -180,7 +177,7 @@
               </li>
             </ul>
           </div>
-          <div class="tab-pane fade" id="pills-study" role="tabpanel">
+          <div class="tab-pane fade" id="educational" role="tabpanel">
             <ul>
               <li>
                 <span class="float-dot">
@@ -224,7 +221,7 @@
               </li>
             </ul>
           </div>
-          <div class="tab-pane fade" id="pills-participation" role="tabpanel">
+          <div class="tab-pane fade" id="participation" role="tabpanel">
             <ul>
               <li>
                 <span class="float-dot">
@@ -383,11 +380,13 @@
                       <div class="carousel-item carousel-sec"></div>
                       <div class="carousel-item carousel-third"></div>
                     </div>
-                    <a class="btn-carousel carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <a class="btn-carousel carousel-control-prev" href="#carouselExampleControls" role="button"
+                      data-slide="prev">
                       <span class="carousel-control-prev-icon"></span>
                       <span class="sr-only">Previous</span>
                     </a>
-                    <a class="btn-carousel carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <a class="btn-carousel carousel-control-next" href="#carouselExampleControls" role="button"
+                      data-slide="next">
                       <span class="carousel-control-next-icon"></span>
                       <span class="sr-only">Next</span>
                     </a>
@@ -406,7 +405,37 @@
             </div>
           </div>
           <!-- modal -->
+        </div>
+      </div>
+    </section>
 
+    <section class="contact" id="contact">
+      <div class="row">
+        <h2 class="section-text-01">CONTACT</h2>
+      </div>
+      <div class="row">
+        <p class="contact__p">
+          Have any question or need more information about me?
+          Please let me know if you need my resume.
+        </p>
+      </div>
+      <div class="row">
+        <div class="contact-form__div">
+          <form action="post" class="contact__form">
+            <div class="form__input">
+              <input type="text" id="name" autocomplete="name" name="name" required>
+              <label for="name">Your Name</label>
+            </div>
+            <div class="form__input">
+              <input type="text" id="email" autocomplete="email" name="email" required>
+              <label for="email">Your Email</label>
+            </div>
+            <div class="form__input">
+              <textarea type="text" id="message" name="message" required></textarea>
+              <label for="message">Leave Message</label>
+            </div>
+            <input type="button" class="btn" value="Submit"></a>
+          </form>
         </div>
       </div>
     </section>
