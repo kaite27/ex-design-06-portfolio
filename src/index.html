@@ -149,6 +149,18 @@
       </div>
     </section>
 
+    <template id="project">
+      <div class="proj-img">
+        <img class="proj-img__img" src="image/app1-min.jpg">
+        <div class="proj-caption">
+          <div><a href="#" class="btn-ghost">Learn More</a></div>
+          <h5 class="proj-title">Tile01-subtitle01</h5>
+          <span><i class="fab first-icon fa-react"></i></span>
+          <!-- <span><i class="fab second-icon fa-react"></i></span> -->
+        </div>
+      </div>
+    </template>
+
     <section class="projects" id="projects">
       <div class="row">
         <h2 class="section-text-01">PROJECTS</h2>
@@ -164,70 +176,7 @@
         <div class="tab-content projects-content">
           <div class="tab-pane proj-item__div active fade show" id="develop">
             <div class="proj-dev">
-              <div class="proj-img">
-                <div class="proj-caption">
-                  <div><a href="#" class="btn-ghost">Learn More</a></div>
-                  <h5 class="proj-title">Tile01-subtitle01</h5>
-                  <span><i class="fab fa-react"></i></span>
-                </div>
-              </div>
-              <div class="proj-img">
-                <div class="proj-caption">
-                  <div><a href="#" class="btn-ghost">Learn More</a></div>
-                  <h5 class="proj-title">Tile02-subtitle02</h5>
-                  <span><i class="fab fa-js-square"><i class="fab"></i></span>
-                </div>
-              </div>
-              <div class="proj-img">
-                <div class="proj-caption">
-                  <div><a href="#" class="btn-ghost">Learn More</a></div>
-                  <h5 class="proj-title">Tile03-subtitle03</h5>
-                  <span><i class="fab fa-react"><i class="fab fa-sass"></i></span>
-                </div>
-              </div>
-              <div class="proj-img">
-                <div class="proj-caption">
-                  <div><a href="#" class="btn-ghost">Learn More</a></div>
-                  <h5 class="proj-title">Tile05-subtitle05</h5>
-                  <span><i class="fab fa-react"><i class="fab fa-react"></i></span>
-                </div>
-              </div>
-              <div class="proj-img">
-                <div class="proj-caption">
-                  <div><a href="#" class="btn-ghost">Learn More</a></div>
-                  <h5 class="proj-title">Tile05-subtitle05</h5>
-                  <span><i class="fab fa-js-square"></i></span>
-                </div>
-              </div>
-              <div class="proj-img">
-                <div class="proj-caption">
-                  <div><a href="#" class="btn-ghost">Learn More</a></div>
-                  <h5 class="proj-title">Tile06-subtitle06</h5>
-                  <span><i class="fab fa-js-square"><i class="fab fa-react"></i></span>
-                </div>
-              </div>
-              <div class="proj-img">
-                <div class="proj-caption">
-                  <div><a href="#" class="btn-ghost">Learn More</a></div>
-                  <h5 class="proj-title">Tile06-subtitle06</h5>
-                  <span><i class="fab fa-js-square"><i class="fab fa-react"></i></span>
-                </div>
-              </div>
-              <div class="proj-img">
-                <div class="proj-caption">
-                  <div><a href="#" class="btn-ghost">Learn More</a></div>
-                  <h5 class="proj-title">Tile06-subtitle06</h5>
-                  <span><i class="fab fa-js-square"><i class="fab fa-react"></i></span>
-                </div>
-              </div>
-              <div class="proj-img">
-                <div class="proj-caption">
-                  <div><a class="btn-ghost1 btn-ghost" data-toggle="modal" data-target="#exampleModalLong">Learn
-                      More</a></div>
-                  <h5 class="proj-title">Tile06-subtitle06</h5>
-                  <span><i class="fab fa-js-square"><i class="fab fa-react"></i></span>
-                </div>
-              </div>
+              <!-- insert template-->
               <div class="proj-img-last">
                 <a class="btn"><i class="fab fa-github"></i> View More</a>
               </div>
@@ -265,7 +214,7 @@
                 </div>
                 <div class="modal-footer">
                   <div class="modal-title">
-                    <h4>Project Title</h4>
+                    <h4 class="modal-proj-title">Project Title</h4>
                   </div>
                   <div class="modal-subtitle">Vendor Company AA</div>
                   <div class="modal-text">Exercitation nostrud aute et fugiat deserunt aute qui. Sint aliquip
@@ -276,8 +225,8 @@
                     enim deserunt quis ipsum consectetur. Cupidatat tempor cupidatat ea nostrud fugiat mollit.
                   </div>
                   <div class="modal-btn">
-                    <a href="#" class="btn">GIT Repo</a>
-                    <a href="#" class="btn-ghost">View Site</a>
+                    <a href="#" class="btn modal-first__btn">GIT Repo</a>
+                    <a href="#" class="btn-ghost modal-second__btn">View Site</a>
                   </div>
                 </div>
               </div>

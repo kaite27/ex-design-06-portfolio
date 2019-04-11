@@ -10,7 +10,8 @@ const portfolioAPI = axios.create({
 
 const templates = {
   // template tag 를 사용한 객체들 -> 서버 db 에서 정보를 가져올 객체
-  expList: document.querySelector("#experience").content
+  expList: document.querySelector("#experience").content,
+  projList: document.querySelector("#project").content
 };
 
 {
@@ -27,6 +28,8 @@ const templates = {
       const dateEl = fragment.querySelector(".experience-date");
       const titleEl = fragment.querySelector(".exp-title");
       const bodyEl = fragment.querySelector(".exp-body");
+      const fitstIconEl = fragment.querySelector(".first-icon");
+      const secondIconEl = fragment.querySelector(".second-icon");
       dateEl.textContent = exp.date;
       titleEl.textContent = exp.title;
 
@@ -42,6 +45,44 @@ const templates = {
     });
   }
   experience("work");
+}
+
+{
+  async function projecet(cat) {
+    const res = await portfolioAPI.get(
+      `/projects?category=${cat}`
+    );
+
+    document.querySelector(".proj-dev").textContent = "";
+
+    res.data.forEach(proj => {
+      const fragment = document.importNode(templates.projList, true);
+      const mainImgEl = fragment.querySelector(".proj-img__img");
+      const titleEl = fragment.querySelector(".proj-title");
+      // modal
+      const modalTitleEl = fragment.querySelector(".modal-proj-title");
+      const modalSubEl = fragment.querySelector(".modal-subtitle");
+      const modalBodyEl = fragment.querySelector(".modal-text");
+      const firstBtnEl = fragment.querySelector(".modal-first__btn");
+      const secondBtnEl = fragment.querySelector(".modal-second__btn");
+
+      mainImgEl.setAttribute("src", `${proj.mainImg}`);
+      console.log(`${proj.mainImg}`);
+      titleEl.textContent = proj.title;
+
+
+      // const divied = exp.body.split('\n');
+      // const firstP = document.createElement('div');
+      // const secondP = document.createElement('div');
+      // firstP.textContent = divied[0]
+      // secondP.textContent = divied[1]
+      // bodyEl.appendChild(firstP);
+      // bodyEl.appendChild(secondP);
+
+      document.querySelector(".proj-dev").appendChild(fragment);
+    });
+  }
+  projecet("develop");
 }
 
 /* Mobile navigation */
@@ -101,11 +142,13 @@ $('.contact').waypoint(function () {
 });
 
 // Modal Toggle on Project Section
-const btnLearnMore = document.querySelector(".btn-ghost1");
+// ***************************************************************
+// const btnLearnMore = document.querySelector(".btn-ghost1");
 
-btnLearnMore.addEventListener("click", e => {
-  $('#exampleModal').modal("toggle");
-});
+// btnLearnMore.addEventListener("click", e => {
+//   $('#exampleModal').modal("toggle");
+// });
+// ***************************************************************
 
 // Tab control on Experiences Section 
 const openTab1 = document.querySelector(".exp-item__list:nth-child(1)");
