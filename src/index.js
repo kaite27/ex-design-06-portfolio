@@ -11,90 +11,90 @@ const portfolioAPI = axios.create({
 const templates = {
   // template tag 를 사용한 객체들 -> 서버 db 에서 정보를 가져올 객체
   expList: document.querySelector("#experience").content,
-  projList: document.querySelector("#project").content
+  projList: document.querySelector("#project").content,
+  projModal: document.querySelector("#proj-modal").content
 };
 
 {
-  async function experience(cat) {
-    const res = await portfolioAPI.get(
-      `/experiences?category=${cat}&_sort=id&_order=desc`
-    );
-
-    document.querySelector(".exp__ul").textContent = "";
-
-    res.data.forEach(exp => {
-      const fragment = document.importNode(templates.expList, true);
-      const dateEl = fragment.querySelector(".experience-date");
-      const titleEl = fragment.querySelector(".exp-title");
-      const bodyEl = fragment.querySelector(".exp-body");
-      dateEl.textContent = exp.date;
-      titleEl.textContent = exp.title;
-
-      // Split content by '\n' and set a new p element to appen it to bodyEl
-      const divied = exp.body.split('\n');
-      for(let i = 0; i < divied.length; i++){
-        const text = document.createElement('p');
-        text.textContent = divied[i];
-        bodyEl.appendChild(text);
-      }
-
-      document.querySelector(".exp__ul").appendChild(fragment);
-    });
-  }
   experience("work");
-}
-
-{
-  async function project(cat) {
-    const res = await portfolioAPI.get(
-      `/projects?category=${cat}`
-    );
-
-    document.querySelector(".proj-dev").textContent = "";
-
-    res.data.forEach(proj => {
-      const fragment = document.importNode(templates.projList, true);
-      const mainImgEl = fragment.querySelector(".proj-img__img");
-      const titleEl = fragment.querySelector(".proj-title");
-      // modal
-      const btnLearnMore = fragment.querySelector(".btn-ghost");
-      const modalTitleEl = fragment.querySelector(".modal-proj-title");
-      const modalSubEl = fragment.querySelector(".modal-subtitle");
-      const modalBodyEl = fragment.querySelector(".modal-text");
-      const firstIconEl = fragment.querySelector(".modal-first__btn");
-      const secondIconEl = fragment.querySelector(".modal-second__btn");
-
-      mainImgEl.setAttribute("src", `${proj.mainImg}`);
-      titleEl.textContent = proj.title;
-      modalTitleEl.textContent = proj.title;
-      modalSubEl.textContent = proj.subtitle;
-      modalBodyEl.textContent = proj.body;
-
-
-      // const divied = exp.body.split('\n');
-      // const firstP = document.createElement('div');
-      // const secondP = document.createElement('div');
-      // firstP.textContent = divied[0]
-      // secondP.textContent = divied[1]
-      // bodyEl.appendChild(firstP);
-      // bodyEl.appendChild(secondP);
-      document.querySelector(".proj-dev").appendChild(fragment);
-
-      // Modal Toggle on Project Section
-      // ***************************************************************
-      const modals = fragment.querySelectorAll(".exampleModal");
-      console.log(modals);
-      btnLearnMore.addEventListener("click", e => {
-        // console.log("btn clicked1")
-        // for(let i = 0; i < modals.length-1; i++) {
-        //   $('.exampleModal')[i].modal("toggle");
-        //   console.log($('.exampleModal')[i])
-        // }
-      })
-    })
-  }
   project("develop");
 }
+
+
+async function experience(cat) {
+  const res = await portfolioAPI.get(
+    `/experiences?category=${cat}&_sort=id&_order=desc`
+  );
+
+  document.querySelector(".exp__ul").textContent = "";
+
+  res.data.forEach(exp => {
+    const fragment = document.importNode(templates.expList, true);
+    const dateEl = fragment.querySelector(".experience-date");
+    const titleEl = fragment.querySelector(".exp-title");
+    const bodyEl = fragment.querySelector(".exp-body");
+    dateEl.textContent = exp.date;
+    titleEl.textContent = exp.title;
+
+    // Split content by '\n' and set a new p element to appen it to bodyEl
+    const divied = exp.body.split('\n');
+    for(let i = 0; i < divied.length; i++){
+      const text = document.createElement('p');
+      text.textContent = divied[i];
+      bodyEl.appendChild(text);
+    }
+
+    document.querySelector(".exp__ul").appendChild(fragment);
+  });
+}
+
+async function project(cat) {
+  const res = await portfolioAPI.get(
+    `/projects?category=${cat}`
+  );
+
+  document.querySelector(".proj-dev").textContent = "";
+
+  res.data.forEach(proj => {
+    const fragment = document.importNode(templates.projList, true);
+    const mainImgEl = fragment.querySelector(".proj-img__img");
+    const titleEl = fragment.querySelector(".proj-title");
+    const btnLearnMore = fragment.querySelector(".btn-ghost");
+
+    mainImgEl.setAttribute("src", `${proj.mainImg}`);
+    titleEl.textContent = proj.title;
+    
+    document.querySelector(".proj-dev").appendChild(fragment);
+    btnLearnMore.addEventListener("click", async e => {
+      console.log(`${proj.id}`);
+      modalPopUp(proj.id);
+    })
+  })
+}
+
+// function to pop-up a modal on project Section
+
+async function modalPopUp(id) {
+  const res = await portfolioAPI.get(`/projects/${id}`);
+  document.querySelector(".modal-dialog").textContent = "";
+
+  const molFrag = document.importNode(templates.projModal, true);
+  const modalTitleEl = molFrag.querySelector(".modal-proj-title");
+  const modalSubEl = molFrag.querySelector(".modal-subtitle");
+  const modalBodyEl = molFrag.querySelector(".modal-text");
+  const firstIconEl = molFrag.querySelector(".modal-first__btn");
+  const secondIconEl = molFrag.querySelector(".modal-second__btn");
+
+  modalTitleEl.textContent = res.data.title;
+  modalSubEl.textContent = res.data.subtitle;
+  modalBodyEl.textContent = res.data.body;
+
+  document.querySelector(".modal-dialog").appendChild(molFrag);
+
+  // Modal Toggle on Project Section
+  $('#exampleModal').modal("toggle");
+}
+
 
 /* Mobile navigation */
 $(document).ready(function () {
@@ -152,15 +152,6 @@ $('.contact').waypoint(function () {
   offset: '60%'
 });
 
-// Modal Toggle on Project Section
-// ***************************************************************
-// const btnLearnMore = document.querySelector(".btn-ghost");
-
-// btnLearnMore.addEventListener("click", e => {
-//   $('#exampleModal').modal("toggle");
-// });
-// ***************************************************************
-
 // Tab control on Experiences Section 
 const openTab1 = document.querySelector(".exp-item__list:nth-child(1)");
 const openTab2 = document.querySelector(".exp-item__list:nth-child(2)");
@@ -172,51 +163,24 @@ const openTab3 = document.querySelector(".exp-item__list:nth-child(3)");
 
 openTab1.addEventListener("click", async e => {
   e.preventDefault();
-  openTab(event, "work", loadExperience);
+  openTab(event, "exp-item__list", "work", experience);
   expAnime();
 });
 
 openTab2.addEventListener("click", async e => {
   e.preventDefault();
-  openTab(event, "educational", loadExperience);
+  openTab(event, "exp-item__list", "educational", experience);
   expAnime();
 });
 
 openTab3.addEventListener("click", async e => {
   e.preventDefault();
-  openTab(event, "participation", loadExperience);
+  openTab(event, "exp-item__list", "participation", experience);
   expAnime();
 });
 
-const loadExperience = async function experience(catName) {
-  const res = await portfolioAPI.get(
-    `/experiences?category=${catName}&_sort=id&_order=desc`
-  );
-
-  document.querySelector(".exp__ul").textContent = "";
-
-  res.data.forEach(exp => {
-    const fragment = document.importNode(templates.expList, true);
-    const dateEl = fragment.querySelector(".experience-date");
-    const titleEl = fragment.querySelector(".exp-title");
-    const bodyEl = fragment.querySelector(".exp-body");
-    dateEl.textContent = exp.date;
-    titleEl.textContent = exp.title;
-
-    const divied = exp.body.split('\n');
-    const firstP = document.createElement('div');
-    const secondP = document.createElement('div');
-    firstP.textContent = divied[0]
-    secondP.textContent = divied[1]
-    bodyEl.appendChild(firstP);
-    bodyEl.appendChild(secondP);
-
-    document.querySelector(".exp__ul").appendChild(fragment);
-  });
-}
-
-function openTab(event, catName, funcion) {
-  const tabLinks = document.querySelectorAll(`.exp-item__list`);
+function openTab(event, elName, catName, funcion) {
+  const tabLinks = document.querySelectorAll(elName);
   for (let i = 0; i < tabLinks.length; i++) {
     tabLinks[i].className = tabLinks[i].className.replace(" active", "");
   }

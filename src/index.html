@@ -159,45 +159,45 @@
           <!-- <span><i class="fab second-icon fa-react"></i></span> -->
         </div>
       </div>
-      <!-- modal -->
-      <div class="modal exampleModal fade" id="exampleModal" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+    </template>
+
+    <template id="proj-modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+        </div>
+        <div class="modal-body">
+          <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item carousel-first active"></div>
+              <div class="carousel-item carousel-sec"></div>
+              <div class="carousel-item carousel-third"></div>
             </div>
-            <div class="modal-body">
-              <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                  <div class="carousel-item carousel-first active"></div>
-                  <div class="carousel-item carousel-sec"></div>
-                  <div class="carousel-item carousel-third"></div>
-                </div>
-                <a class="btn-carousel carousel-control-prev" href="#carouselExampleControls" role="button"
-                  data-slide="prev">
-                  <span class="carousel-control-prev-icon"></span>
-                  <span class="sr-only">Previous</span>
-                </a>
-                <a class="btn-carousel carousel-control-next" href="#carouselExampleControls" role="button"
-                  data-slide="next">
-                  <span class="carousel-control-next-icon"></span>
-                  <span class="sr-only">Next</span>
-                </a>
-              </div>
-            </div>
-            <div class="modal-footer">
-              <div class="modal-title">
-                <h4 class="modal-proj-title"></h4>
-              </div>
-              <div class="modal-subtitle"></div>
-              <div class="modal-text"></div>
-              <div class="modal-btn">
-                <a href="#" class="btn modal-first__btn">GIT Repo</a>
-                <a href="#" class="btn-ghost modal-second__btn">View Site</a>
-              </div>
-            </div>
+            <a class="btn-carousel carousel-control-prev" href="#carouselExampleControls" role="button"
+              data-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="btn-carousel carousel-control-next" href="#carouselExampleControls" role="button"
+              data-slide="next">
+              <span class="carousel-control-next-icon"></span>
+              <span class="sr-only">Next</span>
+            </a>
           </div>
         </div>
+        <div class="modal-footer">
+          <div class="modal-title">
+            <h4 class="modal-proj-title"></h4>
+          </div>
+          <div class="modal-subtitle"></div>
+          <div class="modal-text"></div>
+          <div class="modal-btn">
+            <a href="#" class="btn modal-first__btn">GIT Repo</a>
+            <a href="#" class="btn-ghost modal-second__btn">View Site</a>
+          </div>
+        </div>
+      </div>
+      </div>
       </div>
     </template>
 
@@ -223,11 +223,11 @@
             </div>
           </div>
 
-          <div class="tab-pane proj-item__div fade" id="planning">123</div>
-          <div class="tab-pane proj-item__div fade" id="marketing">556</div>
-
-
           <!-- modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document"></div>
+          </div>
+
         </div>
       </div>
     </section>
