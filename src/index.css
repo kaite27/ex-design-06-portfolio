@@ -785,13 +785,12 @@ nav {
 }
 
 .proj-img .proj-caption span {
-  display: block;
-  text-align: right;
+  float: right;
   font-size: 1.5rem;
 }
 
 .proj-img .proj-caption span i {
-  padding-left: 10px;
+  margin-right: 5px;
 }
 
 .proj-img:hover::before {
