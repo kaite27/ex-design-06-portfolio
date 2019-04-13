@@ -60,13 +60,12 @@ html,
 body {
   background-color: #ffffff;
   color: #666;
-  font-family: "Open Sans Condendsed", "Nanum Gothic", "Arial", sans-serif;
+  font-family: "Roboto+Condensed", "Dosis", "Arial", sans-serif;
   font-weight: 300;
-  font-size: 16px;
+  font-size: 18px;
   text-rendering: optimizeLegibility;
   line-height: 1;
   overflow-x: hidden;
-  /* background-color: #030a13d3; */
 }
 
 /* GENERAL MODULES */
@@ -119,8 +118,9 @@ section {
 
 body h1,
 h2 {
-  font-family: "Dancing Script";
-  font-size: 4rem;
+  font-family: "Dosis";
+  font-weight: 600;
+  font-size: 4.5rem;
   text-align: center;
 }
 
@@ -143,7 +143,7 @@ h2:after {
   background-color: #0abbb5;
   content: "";
   width: 300px;
-  margin: 25px auto;
+  margin: 20px auto 25px auto;
 }
 
 h3 {
@@ -153,6 +153,11 @@ h3 {
 
 h4 {
   font-size: 1.3rem;
+}
+
+h5 {
+  font-size: 1.2rem;
+  margin: 0;
 }
 
 p {
@@ -187,7 +192,7 @@ body .btn-ghost {
   font-weight: 400;
   color: #fff !important;
   padding: 12px 0;
-  margin: 10px 0 20px 0;
+  margin: 10px 0 12px 0;
   min-width: 140px;
   border-radius: 4px;
   border: 2px solid #fff;
@@ -246,7 +251,6 @@ nav {
 
 .main-nav {
   position: relative;
-  /* background-color: rgba(150, 150, 150, 0.6); */
   background-color: rgba(51, 51, 51, 0.8);
   width: 0vw;
   height: 100vh;
@@ -283,7 +287,6 @@ nav {
   content: attr(data-text);
   position: absolute;
   color: #fff;
-  top: 2px;
   width: 100%;
   overflow: hidden;
   white-space: nowrap;
@@ -311,7 +314,7 @@ nav {
 }
 
 .mobile-nav-icon i {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   width: 55px;
   height: 55px;
   border-radius: 100px;
@@ -349,7 +352,8 @@ nav {
 
 .hero-box-img {
   width: 100vw;
-  height: calc(100vh - 131px);
+  height: calc(100vh - 230px);
+  /* height: 100vh; */
   overflow: hidden;
   position: relative;
   background-image: url("image/main-image-min.jpg");
@@ -409,7 +413,7 @@ nav {
 
 .hero-box-cat a h3 {
   position: absolute;
-  top: 0px;
+  top: -10px;
   right: 10px;
   transition: 0.5s;
 }
@@ -429,8 +433,9 @@ nav {
 .hero-box-cat p {
   color: rgb(211, 211, 211);
   transform: translateY(10px);
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 600;
+  letter-spacing: 1px;
 }
 
 .hero-box-cat a p::after {
@@ -527,6 +532,7 @@ nav {
 
 .about-box-me p {
   margin-top: 20px;
+  line-height: 1.2rem;
 }
 
 .about-box-skill {
@@ -535,7 +541,7 @@ nav {
 
 .skill-icons {
   display: flex;
-  height: 100%;
+  height: 70%;
   align-items: center;
 }
 
@@ -550,7 +556,7 @@ nav {
   width: 150px;
   height: 50px;
   margin: 10px;
-  font-size: 2.2rem;
+  font-size: 1.9rem;
   color: #fff;
 }
 
@@ -786,7 +792,7 @@ nav {
 
 .proj-img .proj-caption span {
   float: right;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 .proj-img .proj-caption span i {
@@ -876,6 +882,7 @@ nav {
 
 .modal-content .modal-footer .modal-text {
   margin: 15px 0 18px 0;
+  padding: 0 4px;
   line-height: 1.4;
   height: 110px;
   overflow: hidden;
