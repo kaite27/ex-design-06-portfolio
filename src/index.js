@@ -18,7 +18,6 @@ const templates = {
   async function experience(cat) {
     const res = await portfolioAPI.get(
       `/experiences?category=${cat}&_sort=id&_order=desc`
-      // `/experiences?category=work&_sort=id&_order=desc`
     );
 
     document.querySelector(".exp__ul").textContent = "";
@@ -28,18 +27,16 @@ const templates = {
       const dateEl = fragment.querySelector(".experience-date");
       const titleEl = fragment.querySelector(".exp-title");
       const bodyEl = fragment.querySelector(".exp-body");
-      const fitstIconEl = fragment.querySelector(".first-icon");
-      const secondIconEl = fragment.querySelector(".second-icon");
       dateEl.textContent = exp.date;
       titleEl.textContent = exp.title;
 
+      // Split content by '\n' and set a new p element to appen it to bodyEl
       const divied = exp.body.split('\n');
-      const firstP = document.createElement('div');
-      const secondP = document.createElement('div');
-      firstP.textContent = divied[0]
-      secondP.textContent = divied[1]
-      bodyEl.appendChild(firstP);
-      bodyEl.appendChild(secondP);
+      for(let i = 0; i < divied.length; i++){
+        const text = document.createElement('p');
+        text.textContent = divied[i];
+        bodyEl.appendChild(text);
+      }
 
       document.querySelector(".exp__ul").appendChild(fragment);
     });
@@ -48,7 +45,7 @@ const templates = {
 }
 
 {
-  async function projecet(cat) {
+  async function project(cat) {
     const res = await portfolioAPI.get(
       `/projects?category=${cat}`
     );
@@ -60,15 +57,18 @@ const templates = {
       const mainImgEl = fragment.querySelector(".proj-img__img");
       const titleEl = fragment.querySelector(".proj-title");
       // modal
+      const btnLearnMore = fragment.querySelector(".btn-ghost");
       const modalTitleEl = fragment.querySelector(".modal-proj-title");
       const modalSubEl = fragment.querySelector(".modal-subtitle");
       const modalBodyEl = fragment.querySelector(".modal-text");
-      const firstBtnEl = fragment.querySelector(".modal-first__btn");
-      const secondBtnEl = fragment.querySelector(".modal-second__btn");
+      const firstIconEl = fragment.querySelector(".modal-first__btn");
+      const secondIconEl = fragment.querySelector(".modal-second__btn");
 
       mainImgEl.setAttribute("src", `${proj.mainImg}`);
-      console.log(`${proj.mainImg}`);
       titleEl.textContent = proj.title;
+      modalTitleEl.textContent = proj.title;
+      modalSubEl.textContent = proj.subtitle;
+      modalBodyEl.textContent = proj.body;
 
 
       // const divied = exp.body.split('\n');
@@ -78,11 +78,22 @@ const templates = {
       // secondP.textContent = divied[1]
       // bodyEl.appendChild(firstP);
       // bodyEl.appendChild(secondP);
-
       document.querySelector(".proj-dev").appendChild(fragment);
-    });
+
+      // Modal Toggle on Project Section
+      // ***************************************************************
+      const modals = fragment.querySelectorAll(".exampleModal");
+      console.log(modals);
+      btnLearnMore.addEventListener("click", e => {
+        // console.log("btn clicked1")
+        // for(let i = 0; i < modals.length-1; i++) {
+        //   $('.exampleModal')[i].modal("toggle");
+        //   console.log($('.exampleModal')[i])
+        // }
+      })
+    })
   }
-  projecet("develop");
+  project("develop");
 }
 
 /* Mobile navigation */
@@ -143,7 +154,7 @@ $('.contact').waypoint(function () {
 
 // Modal Toggle on Project Section
 // ***************************************************************
-// const btnLearnMore = document.querySelector(".btn-ghost1");
+// const btnLearnMore = document.querySelector(".btn-ghost");
 
 // btnLearnMore.addEventListener("click", e => {
 //   $('#exampleModal').modal("toggle");
@@ -158,7 +169,6 @@ const openTab3 = document.querySelector(".exp-item__list:nth-child(3)");
 // const openTab4 = document.querySelector(".proj-item__list:nth-child(1)");
 // const openTab5 = document.querySelector(".proj-item__list:nth-child(2)");
 // const openTab6 = document.querySelector(".proj-item__list:nth-child(3)");
-
 
 openTab1.addEventListener("click", async e => {
   e.preventDefault();
