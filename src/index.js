@@ -237,14 +237,14 @@ function openTab(event, elName, catName, funcion) {
     tabLinks[i].className = tabLinks[i].className.replace(" active", "");
   }
   event.currentTarget.className += ' active';
-  
+
   const name = event.currentTarget.getAttribute("data-name");
   if (name === "planning") {
     document.querySelectorAll('.proj-item__list')[1].className += " active";
   } else if (name === "marketing") {
     document.querySelectorAll('.proj-item__list')[2].className += " active";
   } else {
-    document.querySelectorAll('proj-item__list')[0].className += " active";
+    document.querySelectorAll('.proj-item__list')[0].className += " active";
   }
   funcion(catName);
 }
