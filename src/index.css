@@ -353,7 +353,6 @@ nav {
 .hero-box-img {
   width: 100vw;
   height: calc(100vh - 230px);
-  /* height: 100vh; */
   overflow: hidden;
   position: relative;
   background-image: url("image/main-image-min.jpg");
