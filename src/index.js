@@ -5,6 +5,8 @@ import {
 } from "os";
 import { async } from "q";
 
+alert("Sorry, this site optimized for Desk/laptop only");
+
 const portfolioAPI = axios.create({
   baseURL: process.env.API_URL
 });
@@ -182,17 +184,31 @@ const openTab4 = document.querySelector(".proj-item__list:nth-child(1)");
 const openTab5 = document.querySelector(".proj-item__list:nth-child(2)");
 const openTab6 = document.querySelector(".proj-item__list:nth-child(3)");
 
+const projItem = document.querySelectorAll('.proj-item__list');
+
+const resetClass = () => {
+  for (let i = 0; i < projItem.length; i++) {
+    projItem[i].className = projItem[i].className.replace(" active", "");
+  }
+}
+
 mainTab1.addEventListener("click", async e => {
   e.preventDefault();
+  resetClass();
   openTab(event, "proj-item__list", "develop", project);
+  openTab4.className += ' active';
 });
 mainTab2.addEventListener("click", async e => {
   e.preventDefault();
+  resetClass();
   openTab(event, "proj-item__list", "planning", project);
+  openTab5.className += ' active';
 });
 mainTab3.addEventListener("click", async e => {
   e.preventDefault();
+  resetClass();
   openTab(event, "proj-item__list", "marketing", project);
+  openTab6.className += ' active';
 });
 
 openTab1.addEventListener("click", async e => {
@@ -298,3 +314,4 @@ $(document).ready(function () {
       }
     });
 });
+
