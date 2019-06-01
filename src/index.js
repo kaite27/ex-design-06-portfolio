@@ -50,7 +50,7 @@ async function experience(cat) {
 
 async function project(cat) {
   const res = await portfolioAPI.get(
-    `/projects?category=${cat}`
+    `/projects?category=${cat}&_sort=id&_order=desc`
   );
 
   document.querySelector(".proj-dev").textContent = "";
@@ -101,7 +101,7 @@ async function modalPopUp(id) {
   const divied = res.data.body.split('\n');
   for(let i = 0; i < divied.length; i++){
     const text = document.createElement('p');
-    text.textContent = divied[i];
+    text.textContent = "- " + divied[i];
     modalBodyEl.appendChild(text);
   }
   if(res.data.category !== "develop") {
