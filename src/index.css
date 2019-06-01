@@ -340,7 +340,7 @@ nav {
 
 .ac-animated-svg-icon {
   position: absolute;
-  top: 130px;
+  top: 100px;
   right: 15%;
   width: 400px;
   height: 400px;
@@ -907,10 +907,9 @@ nav {
 }
 
 .proj-img img {
-  width: 100%;
-  padding: 3px;
+  object-fit: cover;
+  overflow: hidden;
 }
-
 
 .proj-img::before {
   content: '';
@@ -987,8 +986,8 @@ nav {
 }
 
 .modal-content .modal-header .close {
-  font-size: 2.5rem;
-  text-shadow: 0 2px 0 #fff;
+  font-size: 3rem;
+  text-shadow: 0 3px 0 #fff;
 }
 
 .modal-content .modal-body {
@@ -998,7 +997,7 @@ nav {
 }
 
 .carousel-inner {
-  height: 350px;
+  height: 365px;
   overflow: hidden;
 }
 
@@ -1017,8 +1016,8 @@ nav {
 .modal-content .modal-footer {
   display: block;
   border: 0;
-  margin: 4px 6px;
-  height: 300px;
+  margin: 3px 5px;
+  height: 325px;
 }
 
 .modal-content .modal-footer h4 {
@@ -1032,10 +1031,10 @@ nav {
 }
 
 .modal-content .modal-footer .modal-text {
-  margin: 15px 0 18px 0;
+  margin: 10px 0;
   padding: 0 4px;
   line-height: 1.4;
-  height: 110px;
+  height: 150px;
   overflow: hidden;
   text-overflow: ellipsis;
   word-wrap: break-word;
@@ -1385,6 +1384,14 @@ footer small {
   font-weight: 600;
   font-size: 2.3rem;
   margin: 0 auto;
+}
+
+.modal-proj-title,
+.modal-subtitle {
+  width: 500px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .modal-done .close {
