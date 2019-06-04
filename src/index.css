@@ -1002,7 +1002,9 @@ nav {
 }
 
 .carousel-item img {
-  width: 100%;
+  width: 600px;
+  height: 365px;
+  object-fit: cover;
 }
 
 .btn-carousel {
