@@ -1,11 +1,20 @@
 import axios from "axios";
 import "@babel/polyfill";
-import {
-  tmpdir
-} from "os";
-import { async } from "q";
 
-alert("Sorry, this site optimized for Desk/laptop only");
+// alert("Sorry, this site optimized for Desk/laptop only");
+
+const typedEl = document.querySelector('.typed-element')
+
+new Typed(typedEl, {
+  strings: ["Hello?", "Hello, world! <br> I am^1500"],
+  typeSpeed: 90,
+  backDelay: 1500,
+  loop: true,
+  backSpeed: 70
+});
+
+
+// start Axios
 
 const portfolioAPI = axios.create({
   baseURL: process.env.API_URL
