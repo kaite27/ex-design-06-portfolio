@@ -120,12 +120,12 @@ body h1,
 h2 {
   font-family: "Dosis";
   font-weight: 600;
-  font-size: 4.5rem;
+  font-size: 4rem;
   text-align: center;
 }
 
 body h1 {
-  font-size: 6rem;
+  font-size: 5.5rem;
   word-spacing: 4px;
   color: #fff;
   line-height: 7rem;
@@ -496,6 +496,17 @@ nav {
   position: relative;
 }
 
+.hero-box__span   {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 2;
+  background: rgba(0, 0, 0, .2);
+  padding: 2px 5px;
+  color: #999;
+  font-size: 0.8rem;
+}
+
 .hero-box__p {
   position: absolute;
   top: 43%;
@@ -505,12 +516,28 @@ nav {
 }
 
 .hero-box__p p {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   color: #fff;
 }
 
 .hero-box__p p:nth-child(1) {
   color: #fff;
+}
+
+/* typed-element */
+.hero-box__p .typed-element {
+  margin: 20px 0;
+  font-size: 2rem;
+  color: #fff;
+}
+
+.hero-box__p .typed-cursor {
+  font-size: 2rem;
+  color: #fff;
+}
+
+.hero-box__p .typed-box {
+  height: 4rem;
 }
 
 .hero-box-img {
@@ -664,6 +691,10 @@ nav {
   color: #555;
 }
 
+.about-box-intro p:last-child {
+  margin-top: 50px;
+}
+
 .about-box-me {
   grid-area: me;
   margin: 0 15px;
@@ -688,6 +719,7 @@ nav {
 
 .about-box-skill {
   grid-area: skill;
+  margin: auto 0;
 }
 
 .skill-icons {
@@ -704,7 +736,7 @@ nav {
 
 .skill-icons ul li {
   position: relative;
-  width: 150px;
+  width: 160px;
   height: 50px;
   margin: 10px;
   font-size: 1.9rem;
@@ -728,7 +760,7 @@ nav {
   height: 100%;
   top: 0;
   left: 0;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   opacity: 0;
   transition: 1s;
 }
