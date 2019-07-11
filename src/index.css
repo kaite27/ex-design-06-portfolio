@@ -347,7 +347,7 @@ nav {
   display: inline-block;
   box-sizing: border-box;
   text-align: center;
-  cursor: pointer;
+  cursor: default;
 }
 .ac-animated-svg-icon .ac-animated-svg-icon-contents {
   position: absolute;
