@@ -132,6 +132,65 @@ body h1 {
   text-align: left;
 }
 
+/* h1 animation */
+.name-box {
+  overflow: hidden;
+}
+
+.link--ilin {
+	font-weight: 900;
+	text-transform: uppercase;
+	line-height: 0.8;
+	overflow: hidden;
+}
+
+.link--ilin span {	
+  font-size: 5.5rem;
+  word-spacing: 4px;
+  color: rgb(236, 236, 236);
+  line-height: 7rem;
+	position: relative;
+	display: inline-block;
+	-webkit-transition: color 0.5s;
+	transition: color 0.5s;
+}
+
+.link--ilin:hover span:first-of-type {
+	color: #fff;
+}
+
+.link--ilin:hover span:last-of-type {
+  color: #333;
+}
+
+.link--ilin span::before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	line-height: 0.8;
+	-webkit-transition: -webkit-transform 0.5s;
+	transition: transform 0.5s;
+}
+
+.link--ilin span:last-of-type::before {
+	background:#333;
+}
+
+.link--ilin:hover span:last-of-type::before,
+.link--ilin span:first-of-type::before {
+	-webkit-transform: translate3d(0,-150%,0);
+	transform: translate3d(0,-150%,0);
+}
+
+.link--ilin:hover span:first-of-type::before,
+.link--ilin span:last-of-type::before {
+	-webkit-transform: translate3d(0,150%,0);
+	transform: translate3d(0,150%,0);
+}
+
+/*  */
 h2 {
   margin-bottom: 40px;
   letter-spacing: 1px;
@@ -675,7 +734,7 @@ nav {
 
 .about-box {
   display: grid;
-  grid-template-columns: 25% 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
   grid-gap: 2%;
   grid-template-areas: "intro me skill";
@@ -684,32 +743,40 @@ nav {
 .about-box-intro {
   grid-area: intro;
   text-align: right;
-  padding-right: 20%;
+  padding: 0 15%;
 }
 
 .about-box-intro h4 {
   color: #555;
+  margin-bottom: 0;
 }
 
 .about-box-intro p:last-child {
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 .about-box-me {
   grid-area: me;
-  margin: 0 15px;
+  margin: 0;
 }
 
 
 .about-me__img {
-  text-align: center;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 50%;
+  transform: rotate(90deg);
+  /* background-size: cover; */
+  background-size: 200%;
+  background-image: url("https://drive.google.com/uc?export=view&id=1-NT42fIWh5Tkhgii7HCpWqEjKyw2Lxay");
+  background-position-x: -160px;
 }
 
 .about-me__img img {
-  width: 300px;
-  height: 300px;
-  overflow: hidden;
-  border-radius: 50%;
+  width: 100%;
+  height: auto;
 }
 
 .about-box-me p {
@@ -825,7 +892,7 @@ nav {
   width: 5px;
   background: #80a3dd;
   position: absolute;
-  left: 44%;
+  left: 42%;
   transform: translateX(-50%);
   top: -2px;
 }
@@ -841,8 +908,8 @@ nav {
 
 .tab-content li .float-dot {
   position: absolute;
-  left: 44%;
-  top: 10px;
+  left: 42%;
+  top: 4px;
   transform: translateX(-50%);
 }
 
@@ -872,7 +939,7 @@ nav {
   display: grid;
   grid-template-areas: "date content";
   grid-template-rows: auto;
-  grid-template-columns: 2.3fr 3fr;
+  grid-template-columns: 2.1fr 3fr;
   gap: 120px;
 }
 

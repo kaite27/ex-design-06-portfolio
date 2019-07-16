@@ -50,7 +50,7 @@ async function experience(cat) {
     const divied = exp.body.split('\n');
     for(let i = 0; i < divied.length; i++){
       const text = document.createElement('p');
-      text.textContent = divied[i];
+      text.textContent = "- " + divied[i];
       bodyEl.appendChild(text);
     }
     document.querySelector(".exp__ul").appendChild(fragment);
