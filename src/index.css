@@ -113,7 +113,7 @@ body {
 }
 
 section {
-  padding: 60px 0;
+  padding: 50px 0;
 }
 
 body h1,
@@ -399,7 +399,8 @@ nav {
 
 .ac-animated-svg-icon {
   position: absolute;
-  top: 100px;
+  top: 40%;
+  transform: translateY(-50%);
   right: 15%;
   width: 400px;
   height: 400px;
@@ -601,7 +602,7 @@ nav {
 
 .hero-box-img {
   width: 100vw;
-  height: calc(100vh - 230px);
+  height: 100vh;
   overflow: hidden;
   position: relative;
   background-size: cover;
@@ -772,11 +773,7 @@ nav {
   background-size: 200%;
   background-image: url("https://drive.google.com/uc?export=view&id=1-NT42fIWh5Tkhgii7HCpWqEjKyw2Lxay");
   background-position-x: -160px;
-}
-
-.about-me__img img {
-  width: 100%;
-  height: auto;
+  filter: grayscale(100%);
 }
 
 .about-box-me p {
@@ -892,7 +889,7 @@ nav {
   width: 5px;
   background: #80a3dd;
   position: absolute;
-  left: 42%;
+  left: 35%;
   transform: translateX(-50%);
   top: -2px;
 }
@@ -908,7 +905,7 @@ nav {
 
 .tab-content li .float-dot {
   position: absolute;
-  left: 42%;
+  left: 35%;
   top: 4px;
   transform: translateX(-50%);
 }
@@ -939,7 +936,7 @@ nav {
   display: grid;
   grid-template-areas: "date content";
   grid-template-rows: auto;
-  grid-template-columns: 2.1fr 3fr;
+  grid-template-columns: 1fr 2fr;
   gap: 120px;
 }
 
