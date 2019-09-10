@@ -1,0 +1,42 @@
+@media only screen and (max-width: 1279px) {
+
+  .mobile-nav-icon i {
+    position: absolute;
+    top: 0;
+    right: 0px;
+    float: right;
+    cursor: pointer;
+    display: none;
+  }
+
+  /* ------- svg design --------- */
+  .icon-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #4f79bd;
+  }
+
+  .ac-animated-svg-icon {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    right: 15%;
+    width: 400px;
+    height: 400px;
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: center;
+    cursor: default;
+  }
+
+  /* hero-box 3 layout */
+  .hero-box-cat {
+    grid-template-areas: "div1 div2 div3 div4 div5";
+    grid-template-columns: 0 1fr 1fr 1fr 0;
+  }
+}
+
+@media only screen and (max-width: 799px) {
+
+}
