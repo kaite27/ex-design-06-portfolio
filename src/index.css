@@ -313,11 +313,12 @@ nav {
   background-color: rgba(51, 51, 51, 0.8);
   width: 0vw;
   height: 100vh;
-  transition: 2s;
+  transition: 2s ease-in-out;
 }
 
 .main-nav.js--main-nav {
   width: 25vw;
+  /* max-width: 350px; */
 }
 
 .main-nav li {
@@ -325,6 +326,7 @@ nav {
   padding: 1rem 3rem;
   font-size: 1.6rem;
   opacity: 0;
+  transition: 1s ease-in-out;
   transition-delay: 1s;
 }
 
@@ -385,23 +387,15 @@ nav {
   margin: 30px;
 }
 
-/* ------------------------------ */
-/* HERO IMAGE BOX */
-/* ------------------------------ */
-
 /* ------- svg design --------- */
 .icon-container {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background-color: #4f79bd;
-}
-
-.ac-animated-svg-icon {
   position: absolute;
   top: 40%;
   transform: translateY(-50%);
-  right: 15%;
+  right: 10%;
+}
+
+.ac-animated-svg-icon {
   width: 400px;
   height: 400px;
   display: inline-block;
@@ -554,6 +548,17 @@ nav {
 
 .hero-box {
   position: relative;
+  background: #4f79bd;
+  width: 100vw;
+  height: 100vh;
+}
+
+.hero-box__div {
+  position: relative;
+  width: 100vw;
+  max-width: 1400px;
+  height: 100%;
+  margin: 0 auto;
 }
 
 .hero-box__span   {
@@ -570,7 +575,7 @@ nav {
 .hero-box__p {
   position: absolute;
   top: 43%;
-  left: 15%;
+  left: 10%;
   transform: translateY(-50%);
   z-index: 2;
 }
@@ -605,9 +610,9 @@ nav {
   height: 100vh;
   overflow: hidden;
   position: relative;
-  background-size: cover;
 }
 
+/* Exp Category Buttons */
 .hero-box-cat {
   position: absolute;
   left: 0;
@@ -760,7 +765,6 @@ nav {
   grid-area: me;
   margin: 0;
 }
-
 
 .about-me__img {
   width: 300px;
