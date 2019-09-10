@@ -23,17 +23,17 @@
   }
 
   /* name-box */
-  .link--ilin span {	
+  .link--ilin span {
     font-size: 4.5rem;
     line-height: 5.5rem;
   }
 
   /* typed-element */
-  .hero-box__p .typed-element, 
+  .hero-box__p .typed-element,
   .hero-box__p .typed-cursor {
     font-size: 1.6rem;
   }
-  
+
   .hero-box__p .typed-box {
     height: 3.2rem;
   }
@@ -50,7 +50,7 @@
   .about-box {
     display: grid;
     grid-template-areas: "me intro"
-                        "me skill";
+      "me skill";
     grid-template-columns: 1fr 1.2fr;
     grid-template-rows: auto auto;
     grid-gap: 10px;
@@ -95,6 +95,7 @@
   .nav.nav-pills.mb-3 {
     justify-content: center;
   }
+
   /* floating dots Adjustment */
   .tab-content ul {
     padding: 20px 0px 20px 40px;
@@ -115,7 +116,7 @@
 
   /* Grid Adjustment */
   .tab-content .experience {
-    grid-template-areas: "date" "content";
+    grid-template-areas: "date""content";
     grid-template-rows: auto auto;
     grid-template-columns: 1fr;
     gap: 0px;
@@ -143,6 +144,7 @@
 }
 
 @media only screen and (max-width: 799px) {
+
   /* ------------------------ */
   /* ------- HEADER --------- */
   /* ------------------------ */
@@ -177,12 +179,14 @@
     height: 250px;
   }
 
-  .skill-icons ul li{
+  .skill-icons ul li {
     width: 80px;
   }
+
   .tab-content ul {
     padding: 20px 5px 20px 10px;
   }
+
   .tab-content li .float-dot {
     left: -7px;
   }
@@ -190,66 +194,109 @@
 
 
 @media only screen and (min-device-width: 414px) and (max-device-width: 896px) and (orientation : landscape) {
-  body {
-    background: red !important;
-    z-index: 999;
-  }
+
   /* hero exp buttons */
   header {
     overflow: hidden;
   }
+
   .hero-box-cat {
     grid-template-rows: 70px;
   }
+
   .hero-box-cat a {
     height: 70px;
   }
-  /* header svg */ 
+
+  .hero-box-cat div {
+    background-color: #fff;
+  }
+
+  .hero-box__div--02:after,
+  .hero-box__div--03:after,
+  .hero-box__div--04:after {
+    background-color: #4b7ed118;
+  }
+
+  .hero-box-cat p {
+    color: #4f79bd;
+  }
+
+  /* header svg */
   .ac-animated-svg-icon {
     width: 280px;
     height: 280px;
   }
+
+  .link--ilin span {
+    font-size: 4rem;
+    line-height: 4.5rem;
+  }
+
+  /* Handle modal pop-up on Exp */
+  .modal-body {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 481px) {
+  /* ------- mobile message -------- */
+  .hidden-mobile {
+    display: block;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+  }
+
   /* mobile nav icon */
   .mobile-nav-icon i {
     display: none;
   }
+
   .icon-container {
     right: 0;
   }
+
   .hero-box {
     height: calc(100vh - 128.4px);
   }
+
   .hero-box__p {
     top: 10%;
     left: 30px;
     transform: translate(0%, 0%);
   }
+
   .hero-box__p p {
     font-size: 20px;
   }
+
   .hero-box__p .typed-element,
   .hero-box__p .typed-cursor {
     font-size: 20px;
   }
-  
+
   .hero-box__p .typed-box {
     height: 40px;
   }
 
-  .link--ilin span {	
+  .link--ilin span {
     font-size: 40px;
     line-height: 3rem;
   }
 
   /* OFF-SCREENS */
-  .hero-box-cat, .about, .experiences, .projects, .contact {
+  .hero-box-cat,
+  .about,
+  .experiences,
+  .projects,
+  .contact {
     display: none;
   }
 
-/* FOOTER */
+  /* FOOTER */
   footer {
     padding: 20px;
   }

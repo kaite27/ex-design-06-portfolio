@@ -387,6 +387,11 @@ nav {
   margin: 30px;
 }
 
+/* ------- mobile message -------- */
+.hidden-mobile {
+  display: none;
+}
+
 /* ------- svg design --------- */
 .icon-container {
   position: absolute;
